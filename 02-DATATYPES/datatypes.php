@@ -61,7 +61,22 @@
         //     "category3" => ["Lily", 10.25, 30],
         // ];
 
-        print_r($flowers);
+        $flowers = array(
+            "category1" => ["Lotus", 2.25, 10],
+            "category2" => ["White Rose", 5.25, 20],
+            "category3" => ["Lily", 10.25, 30],
+        );
+
+        echo print_r($flowers) . "<br>";
+        echo $flowers["category3"][0] . "<br>";
+        //var_dump($flowers);
+
+        // CREATING A NULL DATA TYPE
+        $dob = null;
+
+        //echo $dob;
+
+        var_dump($dob);
     ?>
  
 </body>
