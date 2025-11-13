@@ -29,13 +29,22 @@
         echo $positive . var_dump($positive) . "<br>";
 
         // COMPLEX DATA TYPES
+
+        // NUMERIC ARRAYS OR INDEXED ARRAYS
         //$colors = ["Red", "Green", "Yellow"];
 
         $colors = array("Red","Green","Yellow");
 
 
        echo print_r($colors) . "<br>";
-       var_dump($colors) . "<br>";
+       echo var_dump($colors) . "<br>";
+
+       // ASSOCIATIVE ARRAYS
+      // $salaries = ["E101" => "10000", "E102" => "20000", "E103" => "30000"];
+
+       echo print_r($salaries) . "<br>";
+
+
     ?>
  
 </body>
