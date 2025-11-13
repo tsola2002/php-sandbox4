@@ -18,7 +18,7 @@
         $pi = 3.14;
 
         // CREATING A BOOLEAN DATATYPE
-        $positive = false;
+        $positive = true;
 
         echo $name . var_dump($name) . "<br>";
 
@@ -28,7 +28,14 @@
 
         echo $positive . var_dump($positive) . "<br>";
 
-        //COMPLEX 
+        // COMPLEX DATA TYPES
+        //$colors = ["Red", "Green", "Yellow"];
+
+        $colors = array("Red","Green","Yellow");
+
+
+       echo print_r($colors) . "<br>";
+       var_dump($colors) . "<br>";
     ?>
  
 </body>
