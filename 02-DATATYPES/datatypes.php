@@ -14,6 +14,8 @@
         // CREATING AN INTEGER DATATYPE
         $age = 25;
 
+        $age = 30;
+
         // CREATING A FLOAT DATATYPE
         $pi = 3.14;
 
@@ -40,11 +42,26 @@
        echo var_dump($colors) . "<br>";
 
        // ASSOCIATIVE ARRAYS
-      // $salaries = ["E101" => "10000", "E102" => "20000", "E103" => "30000"];
+       // $salaries = ["E101" => "10000", "E102" => "20000", "E103" => "30000"];
 
-       echo print_r($salaries) . "<br>";
+        $salaries = array("E101" => "10000", "E102" => "20000", "E103" => "30000");
 
+      // echo print_r($salaries) . "<br>";
 
+      echo $salaries['E103'] . "<br>";
+
+      // CREATING A CONSTANT
+      define("PI","3.14");
+
+    
+      // CREATING A MULTIDIMENSIONAL ARRAY
+        // $flowers = [
+        //     "category1" => ["Lotus", 2.25, 10],
+        //     "category2" => ["White Rose", 5.25, 20],
+        //     "category3" => ["Lily", 10.25, 30],
+        // ];
+
+        print_r($flowers);
     ?>
  
 </body>
