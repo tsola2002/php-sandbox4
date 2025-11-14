@@ -41,6 +41,24 @@
         echo var_dump( (bool)[]) . "<br>"; // -> false
         echo var_dump( (bool)["hello"]) . "<br>"; // -> true
 
+        echo "<strong>Converting to Floats</strong>" . "<br><br>";
+
+        echo var_dump( (float)false) . "<br>"; // -> 0
+        echo var_dump( (float)true) . "<br>"; // -> 1
+        echo var_dump( (float)"-1") . "<br>"; // -> -1
+        echo var_dump( (float)"Hello") . "<br>"; // -> 0
+        echo var_dump( (float)"2.5 Hours") . "<br>"; // -> 2.5
+        echo var_dump( (float)null) . "<br><br>"; // -> -1
+
+        echo "<strong>Converting to Arrays</strong>" . "<br><br>";
+
+        echo var_dump( (array)false) . "<br>"; // -> [false]
+        echo var_dump((array)true)   . "<br>"; // -> [true]
+        echo var_dump((array)0)  . "<br>"; // -> [0]
+        echo var_dump((array)1.353)  . "<br>"; // -> [1.353]
+        echo var_dump((array)"John")  . "<br>"; // -> ["John"]
+        echo var_dump((array)null)  . "<br>"; // -> []
+
     ?>
 </body>
 </html>
