@@ -93,8 +93,24 @@
         $n = array("c" => "orange", "d" => "strawberry");
 
         $result = $m + $n;
-        print_r($result);
+        echo print_r($result) . "<br>";
 
+
+        // ASSIGNMENT OPERATORS
+        $j = 20;
+        echo ($j += 5) . "<br>"; // $j = $j + 5
+        echo ($j -= 5) . "<br>";
+        echo ($j /= 5) . "<br>";
+        echo ($j *= 5) . "<br>";
+        echo ($j %= 5) . "<br>";
+
+
+        // STRING OPERATORS
+        $r = "<strong>Hello</strong>";
+
+        echo $r .= " There my friend" . "<br>";
+
+        echo $r;
 
 
 
@@ -102,5 +118,15 @@
         
     
     ?>
+
+    <script>
+        let j = 20;
+
+        console.log(j += 5);
+        console.log(j -= 5);
+        console.log(j /= 5);
+        console.log(j *= 5);
+        console.log(j %= 5);
+    </script>
 </body>
 </html>
