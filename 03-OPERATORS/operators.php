@@ -62,7 +62,38 @@
         echo var_dump($var1 !== $var2) . "<br>";
 
         // LOGICAL OPERATORS
+        echo "LOGICAL AND OPERATOR: ";
+        $k = 1;
+        $l = 1;
+        $m = 1;
+         echo var_dump($k && $l && $m) ."<br>";
+        // echo var_dump($k AND $l AND  $m) ."<br>";
 
+        echo "LOGICAL OR OPERATOR: ";
+        $o = 1;
+        $p = 0;
+        $q = 0;
+        // echo var_dump($o || $p ||  $q) ."<br>";
+        echo var_dump($o OR $p OR $q) ."<br>";
+
+        echo "NOT OPERATOR";
+        echo var_dump(!$p) ."<br>";
+
+        echo "XOR OPERATOR: ";
+        $o = 1;
+        $p = 0;
+        $q = 0;
+        echo var_dump($o xor $q) ."<br>";
+
+        // ARRAY OPERATORS
+        echo "<strong>Union of m and n: </strong>";
+
+        $m = array("a" => "apple", "b" => "banana");
+
+        $n = array("c" => "orange", "d" => "strawberry");
+
+        $result = $m + $n;
+        print_r($result);
 
 
 
