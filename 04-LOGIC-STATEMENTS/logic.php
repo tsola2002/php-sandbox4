@@ -18,13 +18,18 @@
         // }
 
         // IF/ELSEIF STATEMENT
-        if($john > 18){
-            echo "Premium ticket for john";
-        } elseif($john > 10) {
-            echo "Teen Ticket for John!!";
-        } elseif($john > 3){
-            echo "Toddler Ticket with goodie goodie";
-        }
+        // if($john > 18){
+        //     echo "Premium ticket for john";
+        // } elseif($john > 10) {
+        //     echo "Teen Ticket for John!!";
+        // } elseif($john > 3) {
+        //     echo "Toddler Ticket with goodie goodie";
+        // }
+
+        // SWITCH CASE STATEMENT
+
+        
+
 
 
 
