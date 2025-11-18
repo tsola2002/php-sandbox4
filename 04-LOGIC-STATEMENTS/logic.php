@@ -9,7 +9,7 @@
     <h1>Working With Logic Statements</h1>
     <?php 
         // CREATING IF STATEMENT
-        $john = 5;
+        $john = 21;
 
         // if($john > 18){
         //     echo "John can enter the club now";
@@ -27,9 +27,30 @@
         // }
 
         // SWITCH CASE STATEMENT
+        $day = 5;
 
-        switch ($john) {
-            
+        switch ($day) {
+            case 1:
+                echo "The day is Sunday";
+                break;
+            case 2:
+                echo "The day is Monday";
+                break;
+            case 3:
+                echo "The day is Tuesday";
+                break;
+            case 4:
+                echo "The day is Wednesday";
+                break;
+            case 5:
+                echo "The day is Thursday";
+                break;
+            case 6:
+                echo "The day is Friday";
+                break;
+            case 7:
+                echo "The day is Saturday";
+                break;
         }
 
 
