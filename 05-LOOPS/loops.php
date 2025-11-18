@@ -30,7 +30,12 @@
         //     echo "The value of i is: " . $i . "<br>";
         // }
 
-        
+        // FOR EACH LOOP
+        $books = array("Harry Potter", "Lord of the Rings", "The Alchemist", "Rich Dad Poor Dad");
+
+        foreach( $books as $book){
+            echo "<div>" . $book . "</div><br>";
+        }
 
     ?>
 </body>
