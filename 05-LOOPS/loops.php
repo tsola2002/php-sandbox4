@@ -31,10 +31,24 @@
         // }
 
         // FOR EACH LOOP
-        $books = array("Harry Potter", "Lord of the Rings", "The Alchemist", "Rich Dad Poor Dad");
+        // 
+        
+        // USING BREAK 
+        // for($i = 0; $i <= 10; $i++){
+        //     break;
+        //     echo "The value of i is: " . $i . "<br>";
+            
+        // }
 
-        foreach( $books as $book){
-            echo "<div>" . $book . "</div><br>";
+        // echo "Were free!!";
+
+
+        // USING CONTINUE
+        for($i = 0; $i <= 10; $i++){
+            echo $i . "<br>";
+            continue;
+            echo "The value of i is:";    
+           
         }
 
     ?>
