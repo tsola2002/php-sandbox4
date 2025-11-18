@@ -18,10 +18,16 @@
         // echo "Were Done!!";
 
         // DO WHILE LOOP
-        do{
-            echo "The count is: " . $count . "<br>";
-        }
-        while(++$count < 10)
+        // do{
+        //     echo "The count is: " . $count . "<br>";
+        // }
+        // while(++$count < 10);
+
+        // echo "were done with do while loop!!";
+
+        // FOR LOOP
+        
+
     ?>
 </body>
 </html>
