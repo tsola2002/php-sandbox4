@@ -28,7 +28,9 @@
 
         // SWITCH CASE STATEMENT
 
-        
+        switch ($john) {
+            
+        }
 
 
 
