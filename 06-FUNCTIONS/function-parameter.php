@@ -24,8 +24,7 @@
     }
 
     // invoking the function
-    
-      add();
+    add(3);
     
     ?>
 </body>
