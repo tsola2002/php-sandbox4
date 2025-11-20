@@ -30,9 +30,14 @@
         //     echo "The value of i is: " . $i . "<br>";
         // }
 
-        // FOR EACH LOOP
-        // 
+        // FOR EACH LOOP 
+        $books = ["Harry Potter", "Lord of the Rings", "The Alchemist", "The Subtle Art of Not Giving a F*ck"];
+        foreach($books as $book){
+            echo "The book name is: " . $book . "<br>";
+        }
         
+
+
         // USING BREAK 
         // for($i = 0; $i <= 10; $i++){
         //     break;
