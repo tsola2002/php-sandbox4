@@ -28,9 +28,7 @@
 
     // invoking the function
     //$result = return $c;
-
     $result = add();
-
     echo $result;
     
     ?>
