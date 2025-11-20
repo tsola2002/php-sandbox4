@@ -11,12 +11,21 @@
     <?php 
 
     // Defining a basic function with parameters
-    function add($a, $b) {
+    // function addNumbers($a, $b) {
+    //     echo $a + $b . "<br>";
+    // }
+
+    // addNumbers(2, 2);
+
+   
+    // using default parameters
+    function add($a = 2, $b = 3) {
         echo $a + $b;
     }
 
     // invoking the function
-    add(2, 2);
+    
+      add();
     
     ?>
 </body>
