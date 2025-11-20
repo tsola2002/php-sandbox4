@@ -47,8 +47,7 @@
         for($i = 0; $i <= 10; $i++){
             echo $i . "<br>";
             continue;
-            echo "The value of i is:";    
-           
+            echo "The value of i is:";           
         }
 
     ?>
