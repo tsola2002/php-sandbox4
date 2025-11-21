@@ -22,15 +22,26 @@
 
         // USING GLOBAL SCOPE
 
-        $y = 20; // global scoped variable
-        function testGlobal() {
-           global $y; // accessing global variable inside function
-            echo $y;
+        // $y = 20; // global scoped variable
+        // function testGlobal() {
+        //    global $y; // accessing global variable inside function
+        //     echo $y;
+        // }
+
+        // testGlobal();
+
+        // STATIC SCOPE
+        function counter(){
+           static $count = 0; // static scoped variable
+           $count++;
+           echo $count . "<br>";
         }
 
-        testGlobal();
+        counter();
+        counter();
 
-    
+
+
     ?>
 </body>
 </html>
