@@ -6,14 +6,14 @@
     <title>Website Template</title>
     <style>
         body { text-align: center;}
-        .header{ height: 400px;background-color: orangered;}
-        .main{ height: 400px; background-color: green; }
-        .footer{ height: 400px; background-color: yellow;}
+        .header{ height: 200px;background-color: orangered;}
+        .main{ height: 200px; background-color: green; }
+        .footer{ height: 200px; background-color: yellow;}
     </style>
 </head>
 <body>
     <div class="header">
-        <h1>Main Website</h1>
+        HEADER SECTION
     </div>
     <div class="main">
         MAIN SECTION
