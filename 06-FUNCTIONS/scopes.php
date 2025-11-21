@@ -39,6 +39,7 @@
 
         counter();
         counter();
+        counter();
 
 
 
