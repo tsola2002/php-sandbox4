@@ -7,5 +7,16 @@
 </head>
 <body>
     <h1>Handle Registration Page</h1>
+
+    <?php 
+        if(isset($_POST["username"]) && isset($_POST["email"]) && isset($_POST["password"]) && isset($_POST["dob"])){
+
+            echo "Your Form Details are the following "
+            . $_POST["username"] . " "
+            . $_POST["email"] . " "
+            . $_POST["password"] . " "
+            . $_POST["dob"];
+        }
+    ?>
 </body>
 </html>
