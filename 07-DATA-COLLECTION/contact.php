@@ -10,7 +10,7 @@
 
     <?php 
 
-    echo "The id is " . $_GET['id'] . "<br>";
+    echo "The id is " . $_GET['id'] . "and the name is " . $_GET['name'];
     
     
     ?>
