@@ -10,19 +10,19 @@
 
     <form action="handle_reg.php" method="post">
         <label for="name">Name:</label>
-        <input type="text" id="username" name="username" placeholder="input your name" required>
+        <input type="text" id="username" name="username" placeholder="input your name" >
         <br><br>
 
         <label for="email">Email:</label>
-        <input type="email" id="email" name="email"  placeholder="input your email" required>
+        <input type="email" id="email" name="email"  placeholder="input your email" >
         <br><br>
 
         <label for="password">Password:</label>
-        <input type="password" id="password" name="password" placeholder="input your password" required>
+        <input type="password" id="password" name="password" placeholder="input your password" >
         <br><br>
 
         <label for="dob">Date Of Birth:</label>
-        <input type="date" id="dob" name="dob" placeholder="input your date of birth" required>
+        <input type="date" id="dob" name="dob" placeholder="input your date of birth">
         <br><br>
 
         <input type="submit" name="submit" value="Register">

@@ -9,14 +9,26 @@
     <h1>Handle Registration Page</h1>
 
     <?php 
-        if(isset($_POST["username"]) && isset($_POST["email"]) && isset($_POST["password"]) && isset($_POST["dob"])){
 
-            echo "Your Form Details are the following "
-            . $_POST["username"] . " "
-            . $_POST["email"] . " "
-            . $_POST["password"] . " "
-            . $_POST["dob"];
+    // !isset($_POST["username"]) || !isset($_POST["email"]) || !isset($_POST["password"]) || !isset($_POST["dob"])
+        if(empty($_POST["password"])||  empty($_POST["username"]) || empty($_POST["email"]) || empty($_POST["dob"])){
+
+            echo "<h2>Please Fill in all the required fields</h2>";
+           
+        }else{
+
+            $username = $_POST["username"];
+            $email = $_POST["email"];
+            $password = $_POST["password"];
+            $dob = $_POST["dob"];
+                
+
+            echo "<h2>Registration Successful</h2>";
+            echo "<p> Name: $username</p>";
+            echo "<p> Email: $email</p>";
+            echo "<p> Date Of Birth: $dob</p>";
         }
+
     ?>
 </body>
 </html>
