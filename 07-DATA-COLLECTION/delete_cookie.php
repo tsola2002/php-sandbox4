@@ -6,8 +6,12 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>
-        
+    <h1>Deleting cookies
     </h1>
+
+    <?php 
+        setcookie("username","", time() - 70);
+        setcookie("id","", time() - 70);
+    ?>
 </body>
 </html>
