@@ -6,8 +6,8 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Working With Links in PHP</h1>
-
-    <a href="contact.php?id=419&name=shola">Contact Page</a>
+    <h1>
+        
+    </h1>
 </body>
 </html>

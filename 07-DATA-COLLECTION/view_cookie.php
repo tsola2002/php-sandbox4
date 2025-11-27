@@ -3,11 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Viewing Cookies</title>
 </head>
 <body>
-    <h1>Working With Links in PHP</h1>
+    <h1>Access Cookies In PHP</h1>
 
-    <a href="contact.php?id=419&name=shola">Contact Page</a>
+    <?php 
+        echo $_COOKIE["username"];
+    ?>
 </body>
 </html>

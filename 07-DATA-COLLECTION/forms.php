@@ -9,7 +9,7 @@
     <h1>Working With Forms in PHP</h1>
 
     <form action="handle_reg.php" method="post">
-        <label for="name">Name:</label>
+        <label for="username">Name:</label>
         <input type="text" id="username" name="username" placeholder="input your name" >
         <br><br>
 
