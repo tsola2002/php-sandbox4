@@ -5,10 +5,10 @@
     if(isset($_POST['submit'])){
         // create a target directory
 
-        //print_r($_FILES);
+        // print_r($_FILES);
 
         $targetDir = "uploads/";
-        $fileName = basename($_FILES["photo"]["filename"]);
+        $fileName = basename($_FILES["photo"]["name"]);
 
         $targetFile = $targetDir . $fileName;
 
