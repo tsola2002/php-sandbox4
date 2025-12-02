@@ -45,7 +45,13 @@
     //    }
 
        // 6. deleting a folder
-       rmdir("newfolder");
+       // rmdir("newfolder");
+
+       // 7. Rename a file
+       // rename("index.php", "code.php");
+
+       // 8. making a copy of a file
+       echo "code.php has been duplicated" . copy("code.php","code2.php"). "<br>";
     
     ?>
 </body>
