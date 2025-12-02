@@ -11,11 +11,11 @@
     <?php 
 
        // 1. this code creates a new file document
-       if(touch("index.php")) {
-            echo "A file was created";
-       } else {
-            echo "There was an error creating the file";
-       }
+    //    if(touch("index.php")) {
+    //         echo "A file was created";
+    //    } else {
+    //         echo "There was an error creating the file";
+    //    }
 
        // 2. Delete a file
     //    if(unlink("intro.php")){
@@ -30,7 +30,12 @@
        fwrite($resource, $data);
        fclose($resource);
 
+       // 4. Reading information from a file
+       $resource3 = fopen("index.php", "r");
+       $content = fread($resource3,filesize("index.php"));
+       fclose($resource3);
 
+       echo $content;
     
     ?>
 </body>
