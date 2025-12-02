@@ -36,6 +36,16 @@
        fclose($resource3);
 
        echo $content;
+
+       // 5. creating a folder
+    //    if(mkdir("newfolder")){
+    //         echo "Folder was created";
+    //    } else {
+    //         echo "Folder was not created";
+    //    }
+
+       // 6. deleting a folder
+       rmdir("newfolder");
     
     ?>
 </body>
