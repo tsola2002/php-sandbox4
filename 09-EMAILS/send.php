@@ -16,7 +16,7 @@
         $mail->Host = 'smtp.gmail.com';
         $mail->SMTPAuth = true;
         $mail->Username = 'omatsolasobotie@gmail.com';
-        $mail->Password = 'z0hkxltgcikqejhe';
+        $mail->Password = 'dwaywyxyuxfpfgvj';
         $mail->SMTPSecure = 'ssl';
         $mail->Port = 465;
 
