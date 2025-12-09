@@ -24,3 +24,10 @@ UserDetails
 SET experience = 50
 WHERE userid = 1;
 
+--- THIS WILL DELETE A COLUMN FROM THE DATABASE
+
+DELETE 
+FROM
+UserDetails
+WHERE userid = 1;
+
