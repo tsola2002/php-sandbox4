@@ -11,3 +11,16 @@ experience int(11)
 
 INSERT INTO UserDetails VALUES
 (1, 'Omatsola', 'Bsc', 10);
+
+
+--- THIS WILLL READ FROM 
+SELECT * FROM UserDetails;
+
+
+--- THIS WILL UPDATE A TABLE COLUMN
+
+UPDATE
+UserDetails
+SET experience = 50
+WHERE userid = 1;
+
