@@ -39,10 +39,29 @@
         return $connection->query($insertQuery);
     }
 
+    function updateStudent($id, $name, $email){
+        global $connection;
+        $updateQuery = "UPDATE tbl_student SET
+                    name  = '$name',
+                    email = '$email'
+                    WHERE id = $id";
+        
+        return $connection->query($updateQuery);
+    }
+
+    function deleteStudent($id){
+        global $connection;
+        $deleteQuery = "DELETE FROM tbl_student
+                        WHERE id = '$id'";     
+        return $connection->query($deleteQuery);
+    }
+
+
 
     // FUNCTION USAGE
-    createStudent("Tommy", "tommy@yahoo.co.uk");
-
+    //createStudent("Tommy", "tommy@yahoo.co.uk");
+    //updateStudent(2, "Favour", "Favour@yahoo.co.uk");
+    deleteStudent(5);
 
 
     // 4. using and displaying the returned data
