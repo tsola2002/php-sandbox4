@@ -16,19 +16,33 @@
     $port = 3306;
     $dbname = "school_db";
 
+    global $connection;
     $connection = mysqli_connect($hostname, $username, $password, $dbname, $port);
 
-    if(!$connection){
-        die('Could not connect to the datbase' . mysqli_connect_error());
-    } else {
-        echo "Succesfully connected to the database";
-    }
+    // if(!$connection){
+    //     die('Could not connect to the datbase' . mysqli_connect_error());
+    // } else {
+    //     echo "Succesfully connected to the database";
+    // }
 
     // 3. Perform a query against the mysql database
     $query = "SELECT * FROM tbl_student";
 
     // this will run the above query against our database
     $result = $connection->query($query);
+
+
+    function createStudent($name, $email){
+        global $connection;
+        $insertQuery = "INSERT INTO tbl_student(name, email)
+                        VALUES ('$name', '$email')";
+        return $connection->query($insertQuery);
+    }
+
+
+    // FUNCTION USAGE
+    createStudent("Tommy", "tommy@yahoo.co.uk");
+
 
 
     // 4. using and displaying the returned data
@@ -43,6 +57,8 @@
         . $row['created_at'] . "<td></tr>";
     }
     echo "</table>";
+
+    mysqli_close($connection);
 
     ?>
 </body>
