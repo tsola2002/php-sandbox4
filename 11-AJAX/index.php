@@ -59,6 +59,33 @@
         }
 
         loadStudents();
+
+        //GRAB FORM INFO AND SAVE IN DATABASE
+        document.getElementById("studentForm").addEventListener("submit", function(e){
+            e.preventDefault();
+
+            const id = document.getElementById("id").value;
+            const name = document.getElementById("name").value;
+            const email = document.getElementById("email").value;
+
+            const xhr = new XMLHttpRequest();
+            xhr.open("POST", "save.php", true);
+            xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+
+            xhr.onload = function(){
+                if(xhr.status === 200){
+                    document.getElementById("studentForm").reset();
+                    document.getElementById("id").value = "";
+                    loadStudents();
+                }
+            };
+
+            xhr.send(
+                "id=" + encodencodeURIComponent(id) +
+                "&name=" + encodencodeURIComponent(name) +
+                "&email" + encodencodeURIComponent(email)
+            );
+        });
     </script>
 </body>
 </html>
