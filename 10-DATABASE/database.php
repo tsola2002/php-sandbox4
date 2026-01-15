@@ -10,11 +10,14 @@
     <?php 
 
     // 1. & 2Create a Connection to the Database and select the database
+    /* ==========================
+    DATABASE CONNECTION
+    ========================== */
     $hostname = "localhost";
-    $username  = "root";
+    $username = "root";
     $password = "";
-    $port = 3306;
-    $dbname = "school_db";
+    $dbname   = "school_db";
+    $port     = 3306;
 
     global $connection;
     $connection = mysqli_connect($hostname, $username, $password, $dbname, $port);
