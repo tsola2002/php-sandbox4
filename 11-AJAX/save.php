@@ -13,7 +13,7 @@ $email = mysqli_real_escape_string($connection, $_POST['email']);
 if($id){
     // UPDATE
     $query = "UPDATE tbl_student
-              SET name='$name'
+              SET name='$name',
                   email ='$email'
               WHERE id=$id";
 } else{

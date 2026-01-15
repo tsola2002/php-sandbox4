@@ -60,6 +60,31 @@
 
         loadStudents();
 
+        // EDITING A STUDENT RECORD
+        function editStudent(id, name, email){
+            document.getElementById("id").value = id;
+            document.getElementById("name").value = name;
+            document.getElementById("email").value = email;
+        }
+
+        // DELETING A STUDENT RECORD
+        function deleteStudent(id){
+            if(!confirm("Delete this student?")) return;
+            
+            const xhr = new XMLHttpRequest();
+            xhr.open("POST", "delete.php", true);
+            xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+
+            xhr.onload = function(){
+                if(xhr.status === 200){
+                    loadStudents();
+                }
+            };
+            xhr.send("id=" + encodeURIComponent(id));
+        }
+
+
+
         //GRAB FORM INFO AND SAVE IN DATABASE
         document.getElementById("studentForm").addEventListener("submit", function(e){
             e.preventDefault();
@@ -81,9 +106,9 @@
             };
 
             xhr.send(
-                "id=" + encodencodeURIComponent(id) +
-                "&name=" + encodencodeURIComponent(name) +
-                "&email" + encodencodeURIComponent(email)
+                "id=" + encodeURIComponent(id) +
+                "&name=" + encodeURIComponent(name) +
+                "&email=" + email
             );
         });
     </script>
