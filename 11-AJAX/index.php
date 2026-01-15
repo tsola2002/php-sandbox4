@@ -41,5 +41,24 @@
             </div>
         </div>
     </div>  
+
+    <script>
+        // LOADING STUDENTS FROM FETCH.PHP
+        function loadStudents() {
+            // CREATE XMLHTTPREQUEST OBJECT
+            const xhr = new XMLHttpRequest();
+            xhr.open("GET", "fetch.php", true);
+
+            xhr.onload = function() {
+                if(xhr.status === 200){
+                    document.getElementById("table-data").innerHTML = xhr.responseText;
+                }
+            };
+
+            xhr.send();
+        }
+
+        loadStudents();
+    </script>
 </body>
 </html>
