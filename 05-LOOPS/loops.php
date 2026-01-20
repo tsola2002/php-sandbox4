@@ -11,11 +11,11 @@
 
         // CREATING A WHILE LOOP
         $count = 0;
-        // while($count <= 10){
-        //     echo "The count is: " . $count . "<br>";
-        //     $count++;
-        // }
-        // echo "Were Done!!";
+        while($count <= 10){
+            echo "The count is: " . $count . "<br>";
+            $count++;
+        }
+        echo "Were Done!!";
 
         // DO WHILE LOOP
         // do{
@@ -31,10 +31,10 @@
         // }
 
         // FOR EACH LOOP 
-        $books = ["Harry Potter", "Lord of the Rings", "The Alchemist", "The Subtle Art of Not Giving a F*ck"];
-        foreach($books as $book){
-            echo "The book name is: " . $book . "<br>";
-        }
+        // $books = ["Harry Potter", "Lord of the Rings", "The Alchemist", "The Subtle Art of Not Giving a F*ck"];
+        // foreach($books as $book){
+        //     echo "The book name is: " . $book . "<br>";
+        // }
         
 
 
@@ -49,11 +49,11 @@
 
 
         // USING CONTINUE
-        for($i = 0; $i <= 10; $i++){
-            echo $i . "<br>";
-            continue;
-            echo "The value of i is:";           
-        }
+        // for($i = 0; $i <= 10; $i++){
+        //     echo $i . "<br>";
+        //     continue;
+        //     echo "The value of i is:";           
+        // }
 
     ?>
 </body>
