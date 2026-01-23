@@ -1,6 +1,17 @@
 <?php
 
     require_once 'header.php';
+
+    $error = $user = $pass = "";
+
+    if(isset($_POST['user'])){
+        $user = sanitizeString($_POST['user']);
+        $pass = sanitizeString($_POST['pass']);
+
+        if(){
+            
+        }
+    }
     
 
 ?>

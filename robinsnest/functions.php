@@ -29,5 +29,14 @@
             return $stmt;
         }
 
+        function sanitizeString($var){
+            global $pdo;
+            $var = strip_tags($var);
+            $var = htmlentities($var);
+            $var = stripslashes($var);
+            $result = $pdo->quote($var);
+            return str_replace("'", "", $result);
+        }
+
 
 ?>      
