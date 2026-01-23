@@ -5,7 +5,7 @@
     $username = 'root';
     $password = '';
     $chrs = 'utf8mb4';
-    $attr = "mysql:host=$host;dbname=$data;charset=$charset=$chrs";
+    $attr = "mysql:host=$host;dbname=$database;charset=$chrs";
     $opts = [
         PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
         PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
