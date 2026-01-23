@@ -12,7 +12,7 @@
         PDO::ATTR_EMULATE_PREPARES => false,
     ];
 
-    //
+
         try{
             $pdo = new PDO($attr, $username, $password, $opts);
         } catch (PDOException $e){
@@ -28,9 +28,6 @@
             $stmt->execute($params);
             return $stmt;
         }
-
-
-
 
 
 ?>      
