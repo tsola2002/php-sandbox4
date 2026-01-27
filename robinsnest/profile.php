@@ -103,3 +103,41 @@ if (isset($_FILES['image']['name']) && $_FILES['image']['name'] !== "") {
                 </div>
 
                 <!-- Profile Form -->
+                <form method="post"
+                      action="profile.php?r=<?= $randstr ?>"
+                      enctype="multipart/form-data">
+
+                    <div class="mb-3">
+                        <label class="form-label">About You</label>
+                        <textarea
+                            name="text"
+                            class="form-control"
+                            rows="4"
+                            placeholder="Tell us something about yourself..."
+                        ><?= htmlspecialchars($text) ?></textarea>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Profile Image</label>
+                        <input type="file" name="image" class="form-control">
+                        <div class="form-text">
+                            JPG, PNG or GIF. Image will be resized automatically.
+                        </div>
+                    </div>
+
+                    <div class="d-grid">
+                        <button type="submit" class="btn btn-primary">
+                            Save Profile
+                        </button>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+</div>
+</body>
+</html>
