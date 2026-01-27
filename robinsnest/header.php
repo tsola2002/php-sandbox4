@@ -33,10 +33,10 @@ if (isset($_SESSION['user']))
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a href="" class="nav-link">Home</a></li>
                     <li class="nav-item"><a href="members.php" class="nav-link">Members</a></li>
-                    <li class="nav-item"><a href="" class="nav-link">Friends</a></li>
+                    <li class="nav-item"><a href="friends.php" class="nav-link">Friends</a></li>
                     <li class="nav-item"><a href="" class="nav-link">Messages</a></li>
                     <li class="nav-item"><a href="profile.php" class="nav-link">Profile</a></li>
-                    <li class="nav-item"><a href="" class="nav-link">Logout</a></li>
+                    <li class="nav-item"><a href="logout.php" class="nav-link">Logout</a></li>
 
                     <li class="nav-item"><a href="" class="nav-link">Home</a></li>
                     <li class="nav-item"><a href="signup.php" class="nav-link">Sign Up</a></li>
