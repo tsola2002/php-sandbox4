@@ -1,9 +1,8 @@
 <?php
 require_once 'header.php';
 
-$error = "";
-$user  = "";
-$pass  = "";
+$error = $user = $pass = "";
+
 
 // If already logged in, log out first
 if (isset($_SESSION['user'])) {
@@ -12,17 +11,20 @@ if (isset($_SESSION['user'])) {
 
 // Handle form submission
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    // CLEANUP USERNAME AND PASSWORD FIELDS
     $user = sanitizeString($_POST['user'] ?? '');
     $pass = sanitizeString($_POST['pass'] ?? '');
 
+    //VALIDATION
     if ($user === "" || $pass === "") {
         $error = "<div class='alert alert-danger'>All fields are required.</div>";
     } else {
+        // CHECK WHETHER USERNAME EXISTS ALREADY
         $stmt = querysql("SELECT * FROM members WHERE user = ?", [$user]);
-
         if ($stmt->rowCount()) {
             $error = "<div class='alert alert-warning'>Username already exists.</div>";
         } else {
+            // GO AHEAD AND CREATE NEW ACCOUNT
             // 🔐 If you later upgrade passwords, replace with password_hash()
             querysql(
                 "INSERT INTO members (user, pass) VALUES (?, ?)",
@@ -45,22 +47,24 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 <!-- jQuery Username Availability Check -->
 <script>
-function checkUser(input) {
-    const username = input.value.trim();
+    /*
+    function checkUser(input) {
+        const username = input.value.trim();
 
-    if (username === "") {
-        $("#used").html("");
-        return;
-    }
-
-    $.post(
-        "checkuser.php",
-        { user: username },
-        function (data) {
-            $("#used").html(data);
+        if (username === "") {
+            $("#used").html("");
+            return;
         }
-    );
-}
+
+        $.post(
+            "checkuser.php",
+            { user: username },
+            function (data) {
+                $("#used").html(data);
+            }
+        );
+    }
+    */
 </script>
 
 <div class="row justify-content-center">

@@ -8,12 +8,15 @@
         $user = sanitizeString($_POST['user']);
         $pass = sanitizeString($_POST['pass']);
 
+
+        //VALIDATION TO CHECK USERNAME AND PASSSWORD
         if($user === "" || $pass === ""){
             $error =  '<div class="alert alert-danger">Not all fields were entered</div>';
         } else {
             $stmt = querysql("SELECT user, pass FROM members WHERE user = ?", [$user]);
             if($row = $stmt->fetch()){
                 if($pass == $row['pass']){
+                    // USE SESSION TO LOG USER INTO APPLICATION
                     $_SESSION['user'] = $user;
                     echo "<div class='alert alert-success'>You are logged in. <a href='members.php'>Click here to continue</a></div>";
                     echo "</div></body></html>";
