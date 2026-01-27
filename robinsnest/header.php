@@ -1,9 +1,19 @@
 <?php 
 
+session_start();
+
 require_once 'functions.php';
 
 $userstr = 'Welcome Guest';
-$loggedIn = false;
+$randstr = substr(md5(rand()), 0, 7);
+
+if (isset($_SESSION['user']))
+  {
+    $user  = $_SESSION['user'];
+    $loggedin = TRUE;
+    $userstr  = "Logged in as: $user";
+  }
+  else $loggedin = FALSE;
 
 ?>
 <!DOCTYPE html>
@@ -25,7 +35,7 @@ $loggedIn = false;
                     <li class="nav-item"><a href="" class="nav-link">Members</a></li>
                     <li class="nav-item"><a href="" class="nav-link">Friends</a></li>
                     <li class="nav-item"><a href="" class="nav-link">Messages</a></li>
-                    <li class="nav-item"><a href="" class="nav-link">Profile</a></li>
+                    <li class="nav-item"><a href="profile.php" class="nav-link">Profile</a></li>
                     <li class="nav-item"><a href="" class="nav-link">Logout</a></li>
 
                     <li class="nav-item"><a href="" class="nav-link">Home</a></li>

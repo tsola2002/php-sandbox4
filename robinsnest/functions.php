@@ -45,5 +45,21 @@
             session_destroy();
         }
 
+        
+function showProfile($user) {
+    global $pdo;
+    if (file_exists("$user.jpg"))
+        echo "<img src='$user.jpg' class='img-thumbnail float-start me-3' style='width:100px;'>";
+
+    $stmt = $pdo->prepare("SELECT * FROM profiles WHERE user=?");
+    $stmt->execute([$user]);
+
+    if ($row = $stmt->fetch()) {
+        echo "<p>" . stripslashes($row['text']) . "<br style='clear:left;'></p>";
+    } else {
+        echo "<p>Nothing to see here, yet</p><br>";
+    }
+}
+
 
 ?>      
