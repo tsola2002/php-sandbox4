@@ -47,7 +47,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 <!-- jQuery Username Availability Check -->
 <script>
-    /*
+    
     function checkUser(input) {
         const username = input.value.trim();
 
@@ -56,6 +56,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             return;
         }
 
+        // JQUERY AJAX
         $.post(
             "checkuser.php",
             { user: username },
@@ -64,7 +65,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             }
         );
     }
-    */
+    
 </script>
 
 <div class="row justify-content-center">

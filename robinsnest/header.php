@@ -12,6 +12,7 @@ $loggedIn = false;
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="bootstrap.css">
+    <script src="jquery.js"></script>
     <title>Document</title>
 </head>
 <body>

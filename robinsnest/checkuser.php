@@ -2,7 +2,9 @@
 require_once 'functions.php';
 
 if (isset($_POST['user'])) {
+    //CLEANUP USERNAME
     $user = sanitizeString($_POST['user']);
+    
     $stmt = querysql("SELECT * FROM members WHERE user = ?", [$user]);
     if ($stmt->rowCount()) {
         echo "<span class='text-danger'>&#x2718; The username '$user' is taken</span>";
