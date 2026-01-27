@@ -38,5 +38,12 @@
             return str_replace("'", "", $result);
         }
 
+        function destroySession() {
+            $_SESSION = [];
+            if (session_id() != "" || isset($_COOKIE[session_name()]))
+                setcookie(session_name(), '', time() - 2592000, '/');
+            session_destroy();
+        }
+
 
 ?>      
