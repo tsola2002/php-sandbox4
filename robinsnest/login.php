@@ -11,9 +11,9 @@
         if($user === "" || $pass === ""){
             $error =  '<div class="alert alert-danger">Not all fields were entered</div>';
         } else {
-            $stmt = querySql("SELECT user, pass FROM members WHERE user = ?", [$user]);
+            $stmt = querysql("SELECT user, pass FROM members WHERE user = ?", [$user]);
             if($row = $stmt->fetch()){
-                if(password_verify($pass, $row['pass'])){
+                if($pass == $row['pass']){
                     $_SESSION['user'] = $user;
                     echo "<div class='alert alert-success'>You are logged in. <a href='members.php'>Click here to continue</a></div>";
                     echo "</div></body></html>";
