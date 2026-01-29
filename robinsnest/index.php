@@ -13,7 +13,6 @@
 <footer class="text-center mt-5">
     <p>Web App from <i><a href="https://github.com/tsola2002"></a></i></p>
 </footer>
-
- </div>
+</div>
 </body>
 </html>
