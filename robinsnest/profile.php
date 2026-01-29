@@ -111,8 +111,7 @@ if (
                 <?= $success ?>
 
                 <!-- Profile Preview -->
-                <div class="text-center mb-4">
-                    
+                <div class="text-center mb-4">    
                     <?php showProfile($user); ?>
                 </div>
 
