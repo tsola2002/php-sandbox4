@@ -14,7 +14,8 @@ if (isset($_SESSION['user'])) {
     $userstr  = "Logged in as: $user";
 
 }
-  else $loggedin = FALSE;
+  
+else $loggedin = FALSE;
 
 ?>
 <!DOCTYPE html>

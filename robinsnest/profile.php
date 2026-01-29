@@ -1,7 +1,6 @@
 <?php
 require_once 'header.php';
 
-
 if (!$loggedin) {
     die("</div></body></html>");
 }
@@ -40,10 +39,19 @@ if (isset($_POST['text'])) {
 
 $text = stripslashes(preg_replace('/\s\s+/', ' ', $text));
 
-// Handle image upload
-if (isset($_FILES['image']['name']) && $_FILES['image']['name'] !== "") {
+/*
+|--------------------------------------------------------------------------
+| Handle profile image upload
+|--------------------------------------------------------------------------
+*/
+if (
+    isset($_FILES['image']['name']) &&
+    $_FILES['image']['name'] !== "" &&
+    $_FILES['image']['error'] === UPLOAD_ERR_OK
+) {
     $saveto = "$user.jpg";
     move_uploaded_file($_FILES['image']['tmp_name'], $saveto);
+
     $typeok = true;
 
     switch ($_FILES['image']['type']) {
@@ -64,26 +72,30 @@ if (isset($_FILES['image']['name']) && $_FILES['image']['name'] !== "") {
 
     if ($typeok) {
         list($w, $h) = getimagesize($saveto);
+
         $max = 100;
         $tw = $w;
         $th = $h;
 
-        if ($w > $h && $max < $w) {
+        if ($w > $h && $w > $max) {
             $th = $max / $w * $h;
             $tw = $max;
-        } elseif ($h > $w && $max < $h) {
+        } elseif ($h > $w && $h > $max) {
             $tw = $max / $h * $w;
             $th = $max;
-        } elseif ($max < $w) {
+        } elseif ($w > $max) {
             $tw = $th = $max;
         }
 
         $tmp = imagecreatetruecolor($tw, $th);
         imagecopyresampled($tmp, $src, 0, 0, 0, 0, $tw, $th, $w, $h);
-        imagejpeg($tmp, $saveto);
+        imagejpeg($tmp, $saveto, 90);
 
         imagedestroy($tmp);
         imagedestroy($src);
+
+        // 🔥 FORCE BROWSER REFRESH
+        $_SESSION['profile_img_ts'] = time();
     }
 }
 ?>
@@ -93,19 +105,23 @@ if (isset($_FILES['image']['name']) && $_FILES['image']['name'] !== "") {
 
         <div class="card shadow-sm mb-4">
             <div class="card-body">
+
                 <h3 class="card-title text-center mb-3">Your Profile</h3>
 
                 <?= $success ?>
 
                 <!-- Profile Preview -->
-                <div class="mb-4">
+                <div class="text-center mb-4">
+                    
                     <?php showProfile($user); ?>
                 </div>
 
                 <!-- Profile Form -->
-                <form method="post"
-                      action="profile.php?r=<?= $randstr ?>"
-                      enctype="multipart/form-data">
+                <form
+                    method="post"
+                    action="profile.php?r=<?= $randstr ?>"
+                    enctype="multipart/form-data"
+                >
 
                     <div class="mb-3">
                         <label class="form-label">About You</label>
@@ -132,11 +148,27 @@ if (isset($_FILES['image']['name']) && $_FILES['image']['name'] !== "") {
                     </div>
 
                 </form>
+
             </div>
         </div>
 
     </div>
 </div>
+
+<!-- Live Image Preview -->
+<script>
+$(function () {
+    $('input[name="image"]').on('change', function () {
+        if (this.files && this.files[0]) {
+            const reader = new FileReader();
+            reader.onload = function (e) {
+                $('#profile-preview').attr('src', e.target.result);
+            };
+            reader.readAsDataURL(this.files[0]);
+        }
+    });
+});
+</script>
 
 </div>
 </body>

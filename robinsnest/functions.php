@@ -46,20 +46,36 @@
         }
 
         
-function showProfile($user) {
-    global $pdo;
-    if (file_exists("$user.jpg"))
-        echo "<img src='$user.jpg' class='img-thumbnail float-start me-3' style='width:100px;'>";
+function showProfile($user)
+{
+    $img = "$user.jpg";
 
-    $stmt = $pdo->prepare("SELECT * FROM profiles WHERE user=?");
-    $stmt->execute([$user]);
-
-    if ($row = $stmt->fetch()) {
-        echo "<p>" . stripslashes($row['text']) . "<br style='clear:left;'></p>";
+    if (file_exists($img)) {
+        $ts = $_SESSION['profile_img_ts'] ?? filemtime($img);
+        echo "<img 
+                id='profile-preview'
+                src='$img?ts=$ts'
+                class='img-thumbnail mb-3'
+                width='100'>";
     } else {
-        echo "<p>Nothing to see here, yet</p><br>";
+        echo "<img 
+                id='profile-preview'
+                src='default.png'
+                class='img-thumbnail mb-3'
+                width='100'>";
+    }
+
+    $result = querySql(
+        "SELECT text FROM profiles WHERE user = ?",
+        [$user]
+    );
+
+    if ($result->rowCount()) {
+        $row = $result->fetch();
+        echo "<p>" . nl2br(htmlspecialchars($row['text'])) . "</p>";
     }
 }
+
 
 
 ?>      
